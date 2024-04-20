@@ -28,28 +28,25 @@ public class UpdateBook extends HttpServlet {
         
         
         try {
-            // Establish the database connection
             String url = "jdbc:mysql://localhost:3306/librarybd";
             String username = "root";
             String password = "";
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(url, username, password);
             
-            // Prepare the SQL statement to update the book
             String query = "UPDATE books SET name=?, author=?, price=?  WHERE bookid=?";
             PreparedStatement st = con.prepareStatement(query);
+            
             st.setString(1, name);
             st.setString(2, author);
-            st.setInt(3, bookid);
-            st.setString(4, price);
-            // Execute the update operation
+            st.setString(3, price);
+            st.setInt(4, bookid);
+           
             int rowsAffected = st.executeUpdate();
             
-            // Close the database resources
             st.close();
             con.close();
-            
-            // Check if the update operation was successful
+           
             if (rowsAffected > 0) {
                 out.println("<h3>Book with ID " + bookid + " updated successfully!</h3>");
             } else {

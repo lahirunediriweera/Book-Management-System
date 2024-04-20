@@ -13,8 +13,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Gents Item</title>
-        <link rel="stylesheet" href="style.css">
+        <title>Delete Item</title>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
     <div class="container">
@@ -32,7 +32,7 @@
          </thead>
          <%
                 String url = "jdbc:mysql://localhost:3306/librarybd";
-                String query = "SELECT * FROM books";
+                String query = "SELECT * FROM books";   
                 
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection(url, "root", "");
@@ -49,8 +49,9 @@
                     <td>
                         <form action="DeleteBook" method="post">
                             <input type="hidden" name="bookid" value="<%=rs.getInt("bookid")%>">
-                            <input type="submit" class="btns" value="Delete">
+                            <input type="submit" class="delete-button" value="Delete">
                         </form>
+                        
                     </td>
                    
                 </tr>

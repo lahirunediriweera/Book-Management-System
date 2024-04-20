@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Gents Item</title>
+        <title>Update Item</title>
         <script>
         function openEditPopup(bookId, name, author, price) {
             document.getElementById('editBookId').value = bookId;
@@ -27,7 +27,8 @@
             document.getElementById('editPopup').style.display = 'none';
         }
     </script>
-    <link rel="stylesheet" href="styleu==.css">
+    <link rel="stylesheet" href="css/styleup.css">
+    <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
     <div class="container">
@@ -72,7 +73,7 @@
     </div>
       <div id="editPopup" class="editPopup-content">
         <span class="close" onclick="closeEditPopup()">&times;</span>
-        <h2>Edit Book</h2>
+        <h2>Edit Book Details</h2>
         <form action="UpdateBook" method="post">
             <input type="hidden" id="editBookId" name="bookid">
             <label for="editName">Name:</label>
@@ -80,8 +81,8 @@
             <label for="editAuthor">Author:</label>
             <input type="text" id="editAuthor" name="author"><br><br>
             <label for="editAuthor">Price:</label>
-            <input type="text" id="editPrice" name="pricw"><br><br>
-            <input type="submit" value="Update">
+            <input type="text" id="editPrice" name="price"><br><br>
+            <input name="btn" type="submit" value="Update">
         </form>
     </div>
   </body>
